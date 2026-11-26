@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sonargaze"
+version = "0.1.0"
+description = "Sonargaze: passive exposure recon from Shodan (GUI + CLI)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "SoupNet Technologies" }]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["shodan", "osint", "recon", "exposure", "security"]
+classifiers = [
+  "Environment :: X11 Applications",
+  "Environment :: Console",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: System Administrators",
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+  "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+keyring = ["keyring>=24"]
+
+[project.urls]
+Homepage = "https://github.com/SoupNet-Technologies/sonargaze"
+
+[project.gui-scripts]
+sonargaze = "sonargaze.gui:main"
+
+[project.scripts]
+sonargaze-cli = "sonargaze.cli:main"
+
+[tool.setuptools]
+packages = ["sonargaze"]
